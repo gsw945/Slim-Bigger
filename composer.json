@@ -1,0 +1,56 @@
+{
+    "name": "gsw945/Slim-Bigger",
+    "description": "Slim大型应用(骨架)",
+    "keywords": [
+        "slim",
+        "rest",
+        "router",
+        "psr7"
+    ],
+    "homepage": "https://github.com/gsw945/Slim-Bigger",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "gsw945",
+            "email": "gsw945@foxmail.com",
+            "homepage": "https://gsw945.com/"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9",
+        "slim/slim": "^3",
+        "monolog/monolog": "^1",
+        "slim/twig-view": "^2",
+        "kanellov/slim-twig-flash": "^0.2",
+        "illuminate/database": "^5.2",
+        "illuminate/pagination": "^5.2",
+        "doctrine/dbal": "^2.5",
+        "runcmf/runtracy": "^0.2"
+    },
+    "require-dev": {},
+    "autoload": {
+        "psr-4": {
+            "App\\Middlewares\\": "src/middlewares/",
+            "App\\Migrations\\": "src/migrations/",
+            "App\\Validators\\": "src/validators/",
+            "App\\Controllers\\": "src/controllers/",
+            "App\\Models\\": "src/models/",
+            "App\\Dev\\Init\\": "dev/Init/"
+        },
+        "files": [
+            "src/functions.php",
+            "src/global_vars.php"
+        ]
+    },
+    "autoload-dev": {},
+    "scripts": {
+        "start": "php -S 0.0.0.0:8080 -t public",
+        "init-db": "App\\Dev\\Init\\CliCommand::InitDB"
+    },
+    "repositories": {
+        "packagist": {
+            "type": "composer",
+            "url": "https://packagist.phpcomposer.com"
+        }
+    }
+}
